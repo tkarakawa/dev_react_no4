@@ -3,14 +3,22 @@ import ReactDOM from 'react-dom';
 import './css/index.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import FirstPage from './pages/FirstPage';
 import CurrentWeather from './pages/CurrentWeather';
 import reportWebVitals from './reportWebVitals';
-
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <Header />
-    <CurrentWeather />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={FirstPage} />
+        <Route exact path="/currentweather" component={CurrentWeather} />
+        {/* Not Found */}
+        <Route component={() => <Redirect to="/" />} />
+      </Switch>
+    </BrowserRouter>
     <Footer />
   </React.StrictMode>,
   document.getElementById('root')
