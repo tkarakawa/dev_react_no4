@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './css/index.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import CurrentWeather from './pages/CurrentWeather';
+import reportWebVitals from './reportWebVitals';
 
 
 ReactDOM.render(
   <React.StrictMode>
     <Header />
-    <App />
+    <CurrentWeather />
     <Footer />
   </React.StrictMode>,
   document.getElementById('root')
