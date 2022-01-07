@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 
 const ApiFetch = () => {
-    const urlAPI = "https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=db69ee2a14dbfd5f2abede01a778873e";
+    const urlAPI = "https://api.openweathermap.org/data/2.5/weather?q=tokyo&appid=db69ee2a14dbfd5f2abede01a778873e";
     const [datas, setDatas] = useState([]);
     console.log(axios.defaults.baseURL)
     useEffect( () => {
@@ -14,11 +14,11 @@ const ApiFetch = () => {
     
     return (
       <div className="App">
-        <h1>Axios Test</h1>
+        <h1>WEATHER</h1>
         <div>
-          {datas.map((data) => (
-            <div>{data}</div>
-          ))}
+          {/* {datas.map((data: Data) => (
+            <div>{data.weather}</div>
+          ))} */}
         </div>
       </div>
     );

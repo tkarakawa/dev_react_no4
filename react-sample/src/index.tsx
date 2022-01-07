@@ -7,18 +7,18 @@ import Footer from './components/Footer';
 import FirstPage from './pages/FirstPage';
 import CurrentWeather from './pages/CurrentWeather';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Redirect } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <Header />
     <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={FirstPage} />
-        <Route exact path="/currentweather" component={CurrentWeather} />
+      <Routes>
+        <Route path="/" element={<FirstPage />} />
+        <Route path="/currentweather" element={<CurrentWeather />} />
         {/* Not Found */}
-        <Route component={() => <Redirect to="/" />} />
-      </Switch>
+        <Route element={() => <Redirect to="/" />} />
+      </Routes>
     </BrowserRouter>
     <Footer />
   </React.StrictMode>,
